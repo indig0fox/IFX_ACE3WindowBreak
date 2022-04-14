@@ -63,7 +63,8 @@ GVAR(PFHObject) = [
             {
               params ["_target", "_player", "_params"];
               _params params ["_building", "_selectionName"];
-              playSound3D ["a3\sounds_f\weapons\hits\glass_1.wss", objNull, false, getPosASL _player, 1.5, 1, 10];
+              private _sound = format ["a3\sounds_f\weapons\hits\glass_%1.wss", (floor random 8) + 1];
+              playSound3D [_sound, objNull, false, getPosASL _player, 1.5, 1, 10];
               _building setHit [_selectionName, 1, true];
             }, // statement
             {
