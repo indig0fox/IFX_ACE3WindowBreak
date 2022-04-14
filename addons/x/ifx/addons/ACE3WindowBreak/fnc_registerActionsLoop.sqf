@@ -42,7 +42,8 @@ GVAR(PFHObject) = [
     };
 
     GVAR(subroutine) = [] spawn {
-      private _buildings = player nearObjects ["Building", 125];
+      private _player = call CBA_fnc_currentUnit;
+      private _buildings = _player nearObjects ["Building", 125];
 
       {
         private _building = _x;
