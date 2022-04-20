@@ -10,7 +10,7 @@ class CfgPatches
     authors[] = {"IndigoFox"};
     url = "https://github.com/indig0fox";
 
-    requiredVersion = 2.06;
+    requiredVersion = 2.08;
     VERSION_CONFIG;
 
     // Required addons, used for setting load order.

@@ -8,9 +8,9 @@
     #define COMPONENT_NAME QUOTE(IFX - COMPONENT)
 #endif
 
-#define VERSION 1.0
-#define VERSION_STR 1.0.0
-#define VERSION_AR 1,0,0
+#define VERSION 1.1
+#define VERSION_STR 1.1.0
+#define VERSION_AR 1,1,0
 
 // #define DEBUG_MODE_NORMAL
 // #define DEBUG_MODE_FULL

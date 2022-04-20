@@ -52,7 +52,7 @@ GVAR(PFHObject) = [
         _selections = (_building selectionNames "HitPoints") select {_x find "glass" > -1};
         {
           private _selection = _x;
-          private _helperPos = AGLtoASL (_building modelToWorld (_building selectionPosition _x));
+          private _helperPos = AGLtoASL (_building modelToWorld (selectionPosition [_building, _x, (allLODs _building) findIf {_x#1 == "hitpoints"}, false, "AveragePoint"]));
           private _helperObject = "ACE_LogicDummy" createVehicleLocal [0,0,0];
           _helperObject setPosASL _helperPos;
 
@@ -64,7 +64,7 @@ GVAR(PFHObject) = [
               params ["_target", "_player", "_params"];
               _params params ["_building", "_selectionName"];
               playSound3D ["a3\sounds_f\weapons\hits\glass_1.wss", objNull, false, getPosASL _player, 1.5, 1, 10];
-              _building setHit [_selectionName, 1, true];
+              [_building, [_selectionName, 1, true, _player]] remoteExecCall ["setHit", 0];
             }, // statement
             {
               params ["_target", "_player", "_params"];
